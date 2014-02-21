@@ -1,1 +1,4 @@
-make ./AKorezin/spring/task_1/
+cd ./AKorezin/spring/task_1/
+make
+./app*
+make clean
