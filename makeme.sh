@@ -14,8 +14,8 @@ for path in task*; do
 		echo "$path"
 	else
 		echo "nothing"
-		exit 1
+		exit 0
 	fi
 done
-exit=0
+exit 0
 
