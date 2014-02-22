@@ -1,9 +1,21 @@
 cd ./AKorezin/spring/
-for path in ./task*
-do
-	cd $path
-	make
-	./app*
-	make clean
-	cd ..
+#find . -type d -name "task*" | while read path
+#do
+#	cd $path
+#	make
+#	./app*
+#	make clean
+#	cd ..
+#done
+
+for path in task*; do
+	if [ -e "$path" ]
+	then
+		echo "$path"
+	else
+		echo "nothing"
+		exit 1
+	fi
 done
+exit=0
+
