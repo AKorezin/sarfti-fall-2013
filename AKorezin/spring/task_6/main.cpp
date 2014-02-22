@@ -1,29 +1,35 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#define N 10
+void sort(int *, int);
 int main(int argc,char **argv)
 {
 	srand(time(NULL));
-	int i,n=10;
-	int a[n];
-	for(i=0;i<n;i++)
+	int i;
+	int a[N];
+	for(i=0;i<N;i++)
 		a[i]=rand()%20;
 	
-	for(i=0;i<n;i++)
+	for(i=0;i<N;i++)
 		std::cout<<a[i]<<" ";
 	std::cout<<std::endl;
 
-	for(i=0;i<n-1;i++)
-	{
-		int min=i;
-		for(int j=i+1;j<n;j++)
-			if(a[j]<a[min])
-				min=j;
-		if(min != i)
-			std::swap(a[i],a[min]);
-	}
+	sort(a,0);
 
-	for(i=0;i<n;i++)
+	for(i=0;i<N;i++)
 		std::cout<<a[i]<<" ";
 	std::cout<<std::endl;
+}
+
+void sort(int * array, int pos)
+{
+	if (pos==N)
+		return;
+	int min = pos;
+	for(int i=pos+1;i<N;i++)
+		if (array[i]<array[min])
+			min=i;
+	std::swap(array[pos],array[min]);
+	sort(array,pos+1);
 }
