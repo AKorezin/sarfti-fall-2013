@@ -1,4 +1,3 @@
-cd ./AKorezin/spring/
 #find . -type d -name "task*" | while read path
 #do
 #	cd $path
@@ -8,14 +7,21 @@ cd ./AKorezin/spring/
 #	cd ..
 #done
 
+cd ./AKorezin/spring/
+i=0
 for path in task*; do
 	if [ -e "$path" ]
 	then
-		echo "$path"
+		cd "$path"
+		make
+		./app*
+		i=$((i+$?))
+		make clean
+		cd ..
 	else
-		echo "nothing"
-		exit 0
+		echo "nothing happend"
+		exit 1
 	fi
 done
-exit 0
+exit "$i"
 
