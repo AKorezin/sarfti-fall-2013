@@ -1,12 +1,3 @@
-#find . -type d -name "task*" | while read path
-#do
-#	cd $path
-#	make
-#	./app*
-#	make clean
-#	cd ..
-#done
-
 cd ./AKorezin/spring/
 i=0
 for path in task*; do
