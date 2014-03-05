@@ -7,7 +7,7 @@ int main(int argc,char **argv)
 	srand(time(NULL));
 	int i,n=10;
 	std::list <int> a;
-	std::list::iterator it;
+	std::list<int>::iterator it;
 	for(i=0;i<n;i++)
 		a.push_front(rand()%20);
 	for(it=a.begin();it!=a.end();it++)
