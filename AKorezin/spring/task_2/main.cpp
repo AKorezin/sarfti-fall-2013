@@ -14,7 +14,13 @@ int main(int argc,char** argv)
 		std::cout<<a[i]<<" ";
 	}
 	std::cout<<std::endl;
-	
+	int b[500];
+	queue.get500(b);
+	for(int i=0;i<500;i++)
+	{
+		std::cout<<b[i]<<" ";
+	}
+	std::cout<<std::endl;
 	
 	while(!queue.empty())
 	{
