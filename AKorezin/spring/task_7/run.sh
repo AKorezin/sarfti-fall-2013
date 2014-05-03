@@ -1,3 +1,4 @@
 #!/bin/sh
-echo ./app* 
-./app* 20
+e="./app* 20"
+echo $e
+$e
