@@ -4,6 +4,7 @@ for path in task*; do
 	if [ -e "$path" ]
 	then
 		cd "$path"
+		echo $path
 		make
 		./app*
 		i=$((i+$?))
