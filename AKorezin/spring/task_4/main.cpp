@@ -3,6 +3,12 @@
 int main(int argc,char **argv)
 {
 	list<int> a;
+	a.push_front(1);
+	a.push_back(2);
+	std::cout<<a.front()<<a.back()<<std::endl;
+	a.front()+=2;
+	a.pop_back();
+	std::cout<<a.front()<<a.back()<<std::endl;
 	return 0;
 }
 
