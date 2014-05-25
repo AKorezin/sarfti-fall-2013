@@ -1,8 +1,8 @@
 #include <iostream>
-#include "dlist.h"
+#include "list.h"
 int main(int argc,char **argv)
 {
-	dlist<int> a;
+	list<int> a;
 	return 0;
 }
 
