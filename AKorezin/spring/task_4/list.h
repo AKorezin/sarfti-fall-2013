@@ -70,7 +70,9 @@ class list {
 			{
 				node<T>* delnode=first;
 				first=first->getnext();
-				if(first==NULL)
+				if(first!=NULL)
+					first->setprev(NULL);
+				else
 					last=NULL;
 				delete delnode;
 			}
@@ -90,21 +92,53 @@ class list {
 			{
 				node<T>* delnode=last;
 				last=last->getprev();
-				if(last==NULL)
+				if(last!=NULL)
+					last->setnext(NULL);
+				else
 					first=NULL;
 				delete delnode;
 			}
 		};
-		
+		~list()
+		{
+			while(!empty())
+				pop_back();
+		};
+		int empty()
+		{
+			if (first==last && first==NULL)
+				return 1;
+			return 0;
+		};
+		/*iterator begin()
+		{
+			//return start;
+		};
+		iterator end()
+		{
+			//return finish;
+		}*/
+		class iterator {
+			public:
+				iterator()
+				{
+					current=NULL;
+				};
+				iterator& operator ++(int)
+				{
+
+				};
+				iterator& operator =(const iterator& it)
+				{
+					current=it.current;
+				}
+			private:
+				node<T>* current;
+		};
 	private:
 		node<T>* first;
 		node<T>* last;
 
 };
 
-template <class T>
-class iterator {
-	public:
-		iterator(){};
-};
 #endif
